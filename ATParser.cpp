@@ -35,6 +35,7 @@ int ATParser::putc(char c)
         if (timer.read_ms() > _timeout) {
             return -1;
         }
+        Thread::yield( );
     }
 }
 
@@ -50,6 +51,7 @@ int ATParser::getc()
         if (timer.read_ms() > _timeout) {
             return -1;
         }
+        Thread::yield( );
     }
 }
 
